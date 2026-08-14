@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف انجاز</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="icons/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <h2>انجازك</h2>
+            </div>
+            <div class="theme">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="form-section" id="top">
+        <div class="container">
+                    <p class="errMessage"></p>
+            <div class="form-header">
+                <h3>البيانات الأساسية</h3>
+                <p>أدخل بياناتك الشخصية</p>
+            </div>
+
+            <div class="form">
+                <div class="box">
+                    <label for="name">الاسم الكامل:</label>
+                    <input type="text" id="name" placeholder="مثال: أ. عمير محمد راجح">
+                </div>
+                <div class="box">
+                    <label for="degreeUniversy">المؤهل:</label>
+                    <input type="text" id="degreeUniversy" placeholder="مثال: بكالوريوس أصول الدين">
+                </div>
+                <div class="box">
+                    <label for="jobTitle">التخصص / المادة:</label>
+                    <input type="text" id="jobTitle" placeholder="مثال: تفسير وعلومه - المرحلة الثانوية">
+                </div>
+                <div class="box">
+                    <label for="classes">الصفوف التي يتم تدريسها:</label>
+                    <input type="text" id="classes" placeholder="مثال: الصف الأول والثاني">
+                </div>
+                <div class="box">
+                    <label for="count">عدد الحصص الأسبوعي:</label>
+                    <input type="text" id="countClasses" placeholder="مثال: 4">
+                </div>
+            </div>
+            <div class="form-header">
+                <h3>الرؤية والرسالة والأهداف:</h3>
+                <p>أدخل رؤيتك التعليمية والدورات التدريبية التي حصلت عليها</p>
+            </div>
+            <div class="form">
+                <div class="box">
+                    <label for="sea">الرؤية:</label>
+                    <textarea id="sea"placeholder="اكتب رؤيتك التعليمية هنا..."></textarea>
+                </div>
+                <div class="box">
+                    <label for="message">الرساله:</label>
+                    <textarea id="message" placeholder="اكتب رسالتك التربوية هنا..."></textarea>
+                </div>
+                <div class="box ">
+                    <label for="goals">أهداف ملف إنجاز:</label>
+                    <div class="goalBox">
+                        <div>
+                            <input type="text" id="goals" placeholder="اكتب الهدف ثم اضغط إضافة">
+                        </div>
+                        <div>
+                            <button class="addGoal">إضافة هدف <i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <ul class="dynamic-list" id="goalsList">
+                       
+                    </ul>
+                </div>
+                <div class="box ">
+                    <label for="courses">الدورات التدريبية:</label>
+                    <div class="goalBox">
+                        <div>
+                            <input type="text" id="courses" placeholder="اكتب الدورة ثم اضغط إضافة">
+                        </div>
+                        <div>
+                            <button class="addCourse">إضافة دورة <i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <ul class="dynamic-list" id="coursesList">
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="form-header">
+                <h3>المرفقات والشهادات</h3>
+                <p>قم برفع الصور الخاصة بنشاطك التعليمي</p>
+            </div>
+
+            <div class="form">
+                <div class="box">
+                    <label for="creatives">إضافة شهادات</label>
+                    <input type="file" multiple id="creatives">
+                </div>
+                <div class="box">
+                    <label for="worksPaper">إضافة أوراق العمل</label>
+                    <input type="file" multiple id="worksPaper" >
+                </div>
+                <div class="box">
+                    <label for="tasks">إضافة الإختبارات</label>
+                    <input type="file" multiple id="tasks" >
+                </div>
+            </div>
+            <p class="errFiles"></p>
+            <div class="form-actions">
+                <button class="submit-btn" id="generateBtn">
+                     إنشاء ملف الإنجاز <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolioSection">
+    <div class="container">
+        
+        <div class="portfolio-controls">
+            <div class="controls-title">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>معاينة ملف الإنجاز النهائي</span>
+            </div>
+            <div class="controls-buttons">
+                <!-- <button class="btn-action btn-secondary">
+                    <i class="fa-solid fa-pen-to-square"></i> تعديل البيانات
+                </button> -->
+                <button class="btn-action btn-primary" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> طباعة / حفظ كـ PDF
+                </button>
+            </div>
+        </div>
+
+        <div class="portfolio-paper" id="printableArea">
+            
+            <div class="paper-header">
+                <div class="paper-title">
+                    <h1>ملف إنجاز المعلم</h1>
+                    <p>للعام الدراسي 2025 - 2026 م</p>
+                </div>
+                <div class="paper-badge">
+                    <span>موثق رسمياً</span>
+                </div>
+            </div>
+
+            <div class="paper-grid">
+                <div class="info-card">
+                    <span class="label">الاسم:</span>
+                    <strong class="value" id="previewName"></strong>
+                </div>
+                <div class="info-card">
+                    <span class="label">التخصص / المادة:</span>
+                    <strong class="value" id="previewJobTitle">   </strong>
+                </div>
+                <div class="info-card">
+                    <span class="label">المؤهل العلمي:</span>
+                    <strong class="value" id="previewDegree">   </strong>
+                </div>
+                <div class="info-card">
+                    <span class="label">الصفوف المدرسية:</span>
+                    <strong class="value" id="previewClasses"></strong>
+                </div>
+                <div class="info-card">
+                    <span class="label">عدد الحصص:</span>
+                    <strong class="value" id="previewCount">  </strong>
+                </div>
+                <div class="info-card">
+                    <span class="label">حالة الملف:</span>
+                    <strong class="value status-badge"><i class="fa-solid fa-check-circle"></i> مكتمل</strong>
+                </div>
+            </div>
+
+<div class="paper-section">
+    <h3 class="section-heading"><i class="fa-solid fa-eye"></i> الرؤية والرسالة التربوية</h3>
+    <div class="paper-box">
+        <p><strong>الرؤية:</strong> <span id="previewVision"></span></p>
+    </div>
+    <div class="paper-box">
+        <p><strong>الرسالة:</strong> <span id="previewMessage"></span></p>
+    </div>
+</div>
+
+<div class="paper-section">
+    <h3 class="section-heading"><i class="fa-solid fa-bullseye"></i> أهداف ملف الإنجاز</h3>
+    <ul class="paper-list" id="previewGoalsList">
+       
+    </ul>
+</div>
+
+<div class="paper-section">
+    <h3 class="section-heading"><i class="fa-solid fa-graduation-cap"></i> الدورات التدريبية والورش</h3>
+    <ul class="paper-list" id="previewCoursesList">
+        
+    </ul>
+</div>
+
+
+
+<div class="paper-section" id="creativesSec">
+    <h3 class="section-heading"><i class="fa-solid fa-award"></i> شهادات الشكر والتقدير</h3>
+    <div class="images-gallery">
+        
+        <div class="img-card">
+            <div class="img-wrapper previewCreativs">
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="paper-section" id="worksSec">
+    <h3 class="section-heading"><i class="fa-solid fa-file-image"></i> أوراق العمل والأنشطة</h3>
+    <div class="images-gallery">
+        
+        <div class="img-card">
+            <div class="img-wrapper previewActivety">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="paper-section" id="tasksSec">
+    <h3 class="section-heading"><i class="fa-solid fa-clipboard-check"></i> نماذج الاختبارات</h3>
+    <div class="images-gallery">
+        
+        <div class="img-card">
+            <div class="img-wrapper previewTasks">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+            <div class="paper-footer">
+                <span>تم إنشاء هذا الملف بواسطة منصة إنجازك التعليمية</span>
+                <span>تاريخ الطباعة: <span id="currentDate"></span></span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-col brand-col">
+            <h3 class="footer-logo">عمير محمد</h3>
+            <p class="footer-desc">
+                مطور ومصمم منصة ملف إنجاز المعلم. أداة حديثة تهدف إلى مساعدة المعلمين والمعلمات في توثيق وإخراج ملفات إنجازهم بأسلوب احترافي وسريع.
+            </p>
+        </div>
+
+        <div class="footer-col links-col">
+            <h4 class="footer-title">تنقل سريع</h4>
+            <ul class="footer-links">
+                <li><a href="#top">اذهب لأعلى الصفحة</a></li>
+                <li><a href="#portfolioSection">معاينة الملف</a></li>
+                <li><a href="#goalsList">الأهداف والدورات</a></li>
+                <li><a href="#printableArea">منطقة الطباعة</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col social-col">
+            <h4 class="footer-title">تواصل معي</h4>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/omair-mohammed66/" target="_blank" class="social-icon" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/omair-660" target="_blank" class="social-icon" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://wa.me/201204533680" target="_blank" class="social-icon" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="mailto:omairshop6@gmail.com" class="social-icon" title="البريد الإلكتروني">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة © 2026 | تم التطوير بحب بواسطة <strong>عمير محمد</strong></p>
+    </div>
+</footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
