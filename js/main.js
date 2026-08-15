@@ -1,4 +1,3 @@
-let body = document.body
 
 let name = document.getElementById("name"); // اسم المعلم
 let degreeUniversy = document.getElementById("degreeUniversy"); // المؤهل
@@ -46,7 +45,6 @@ let errMessage = document.querySelector(".errMessage");
 
 let currentDate = document.getElementById('currentDate')
 let portfolioSection = document.getElementById('portfolioSection')
-let theme = document.querySelector('.theme')
 
 portfolioSection.style.display = "none";
 
@@ -219,6 +217,11 @@ function clearData() {
   courses.value = "";
   goalsList.innerHTML = "";
   coursesList.innerHTML = "";
+  creativesCheck = null
+  tasksCheck = null
+  worksCheck = null
+  goalsList.innerHTML =  null
+  coursesList.innerHTML = null
 }
 if (creativesCheck == 'undefined') {
     creativesSec.style.display ='block'
@@ -292,20 +295,4 @@ tasks.addEventListener("change", (e) => {
     }
   }
 });
-if (JSON.parse(localStorage.getItem("mode"))) {
-    body.classList.add("dark");
-} else {
-    body.classList.remove("dark");
-}
-let darkMode = false
-theme.addEventListener('click' , ()=>{
-    body.classList.toggle('dark')
-    if(body.classList.contains('dark')){
-        theme.innerHTML = '<i class="fa-solid fa-sun"></i>'
-        darkMode = true
-    }else{
-        theme.innerHTML = '<i class="fa-solid fa-moon"></i>'
-        darkMode = false
-    }
-    localStorage.setItem("mode" , JSON.stringify(darkMode))
-})
+

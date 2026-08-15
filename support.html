@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعم المشروع</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="icons/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <h2>انجازك</h2>
+            </div>
+            <ul>
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a class="active" href="support.html">دعم المشروع</a></li>
+            </ul>
+            <div class="theme">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="support-section">
+        <div class="support-card">
+            <h2> دعم استمرار المشروع <i class="fa-solid fa-heart"></i></h2>
+            <p>الموقع مجاني بالكامل، وإذا ساعدك في تنظيم ملفك يمكنك دعمه للاستمرار وتطوير ميزات جديدة.</p>
+
+            <div class="support-methods">
+                <a href="https://paypal.me/Omair660" target="_blank" class="btn-support paypal-btn">
+                    دعم عبر PayPal <i class="fa-brands fa-paypal"></i>
+                </a>
+
+                <button id="bankBtn" class="btn-support bank-btn">
+                    التحويل البنكي <i class="fa-solid fa-university"></i>
+                </button>
+            </div>
+            
+            <div id="bankInfo" class="bank-info hidden">
+                <div class="bank-details">
+                    <p><strong>اسم البنك:</strong> مصرف الراجحي</p>
+                    <!-- <p><strong>اسم المستفيد:</strong> عمير محمد</p> -->
+                    <div class="copyCon" id="copyIbanBtn">
+                            <p>
+                                <strong>الآيبان (IBAN):</strong>
+                                <span id="ibanValue">SA0000000000000000000000</span>
+                        </p>
+                           <div class="copy">
+                             <i class="fa-regular fa-copy copyd" ></i>
+                            <p>نسخ الايبان</p>
+                           </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/common.js"></script>
+    <script src="js/support.js"></script>
+</body>
+
+</html>
