@@ -214,7 +214,7 @@ nav .bars:active {
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
 }
 
-p.errMessage {
+p.errMessage ,.errContact {
   padding: 10px;
   width: 100%;
   margin: auto;
@@ -229,6 +229,9 @@ p.errMessage {
   position: sticky;
   top: 100px;
   z-index: 2;
+}
+.errContact{
+  position: static;
 }
 @keyframes shake {
   0%,
@@ -1149,6 +1152,7 @@ p.errMessage {
     font-size: 0.9rem;
     outline: none;
     transition: border-color 0.2s ease;
+    resize: none;
 }
 
 .form-group input:focus,

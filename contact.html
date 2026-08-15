@@ -80,24 +80,25 @@
 
                 <div class="contact-form-container">
                     <form id="contactForm" class="contact-form">
+                        <p class="errContact">.</p>
                         <div class="form-group">
                             <label for="contactName">الاسم</label>
-                            <input onblur="validation(this)"  type="text" id="contactName" name="name" placeholder="أدخل اسمك هنا" required>
+                            <input onblur="validation(this)"  type="text" id="contactName" name="name" placeholder="أدخل اسمك هنا" >
                         </div>
 
                         <div class="form-group">
                             <label for="contactEmail">البريد الإلكتروني</label>
-                            <input onblur="validation(this)" type="email" id="contactEmail" name="email" placeholder="example@mail.com" required>
+                            <input required onblur="validation(this)" type="email" id="contactEmail" name="email" placeholder="example@mail.com" >
                         </div>
 
                         <div class="form-group">
                             <label for="contactMessage">الرسالة أو الاستفسار</label>
                             <textarea onblur="validation(this)" id="contactMessage" name="message" rows="4" placeholder="اكتب رسالتك بالتفصيل..."
-                                required></textarea>
+                                ></textarea>
                         </div>
 
                         <button type="submit" class="btn-submit">
-                            <i class="fa-solid fa-paper-plane"></i> إرسال الرسالة
+                             إرسال الرسالة <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </form>
                 </div>

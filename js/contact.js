@@ -6,7 +6,8 @@ let contactForm = document.getElementById("contactForm");
 let contactName = document.getElementById('contactName')
 let contactEmail = document.getElementById('contactEmail')
 let contactMessage = document.getElementById('contactMessage')
-
+let errContact = document.querySelector('.errContact')
+let btn = document.querySelector('.btn-submit')
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -21,6 +22,8 @@ contactForm.addEventListener('submit', (e) => {
     ) {
         return;
     }
+     btn.innerHTML = 'جاري الإرسال <i class="fa-solid fa-spinner fa-spin"></i>';
+    btn.disabled = true;
 
     emailjs.sendForm(
         "service_og7a9aq",
@@ -33,23 +36,29 @@ contactForm.addEventListener('submit', (e) => {
             text: "تم إرسال رسالتك بنجاح ❤️",
             icon: "success"
         });
-
         contactForm.reset();
     })
     .catch((error) => {
-        console.log(error);
-
         Swal.fire({
             icon: "error",
             title: "أوبس...",
             text: "حدث خطأ أثناء إرسال الرسالة، حاول مرة أخرى.",
         });
+    })
+        .finally(() => {
+                btn.innerHTML = ' إرسال الرسالة <i class="fa-solid fa-paper-plane"></i>'
+    btn.disabled = true;
+
     });
+
 });
 function validation(input){
         if (input.value.trim() == '') {
             input.classList.add('err')
+            errContact.innerHTML = 'يرجاء ملئ الحقول'
+            errContact.style.display = 'block'
         }else{
             input.classList.remove('err')
+            errContact.style.display = 'none'
         }
 }
