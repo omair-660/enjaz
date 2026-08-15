@@ -1,7 +1,8 @@
-let body = document.body
+let body = document.body;
 let theme = document.querySelector('.theme')
 let bars = document.querySelector('.bars')
 let ul = document.querySelector('nav ul')
+let toTop = document.getElementById('top')
 
 if (JSON.parse(localStorage.getItem("mode"))) {
     body.classList.add("dark");
@@ -30,4 +31,8 @@ bars.addEventListener('click' , ()=>{
     }else{
         bars.innerHTML = '<i class="fa-solid fa-bars"></i>'
     }
+})
+
+toTop.addEventListener('click' , ()=>{
+    window.scrollY = 0
 })

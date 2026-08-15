@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دعم المشروع</title>
+    <title>Document</title>
+    <link rel="shortcut icon" href="fav.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+<link rel="stylesheet" href="sweetalert2.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="icons/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
     <nav>
         <div class="container">
             <div class="logo">
@@ -22,8 +24,8 @@
             <ul>
                 <li><a href="index.html">الصفحة الرئيسية</a></li>
                 <li><a href="about.html">من نحن</a></li>
-                <li><a class="active" href="support.html">دعم المشروع</a></li>
-                <li><a href="contact.html">تواصل معنا</a></li>
+                <li><a href="support.html">دعم المشروع</a></li>
+                <li><a class="active" href="contact.html">تواصل معنا</a></li>
             </ul>
             <div class="icons">
                 <div class="bars">
@@ -36,66 +38,71 @@
         </div>
     </nav>
 
+    <section class="contact-section" >
+        <div class="container">
+            <span class="badge-tag" style="display: block; width: max-content; margin:0 auto 30px;">تواصل معنا</span>
 
-    <section class="support-section">
-        <div class="support-card">
+            <div class="contact-wrapper">
 
-            <span class="badge-tag">دعم المشروع</span>
-
-            <h2>
-                ساهم في تطوير المشروع
-                <i class="fa-solid fa-heart"></i>
-            </h2>
-
-            <p>
-                ملف إنجاز المعلم متاح مجانًا للجميع.
-                إذا وجدت الموقع مفيدًا وترغب في المساهمة في تطويره
-                وإضافة مميزات وقوالب جديدة، يمكنك دعمي بشكل اختياري.
-            </p>
-
-            <div class="support-methods">
-
-                <a href="https://paypal.me/Omair660" target="_blank" class="btn-support paypal-btn">
-                    دعم عبر PayPal
-                    <i class="fa-brands fa-paypal"></i>
-                </a>
-
-                <button id="bankBtn" class="btn-support bank-btn">
-                    دعم عبر التحويل البنكي
-                    <i class="fa-solid fa-building-columns"></i>
-                </button>
-
-            </div>
-
-            <div id="bankInfo" class="bank-info hidden">
-
-                <div class="bank-details">
-
+                <div class="contact-info">
+                    <h3>تواصل معي</h3>
                     <p>
-                        <strong>البنك:</strong>
-                        مصرف الراجحي
+                        لديك استفسار، اقتراح، أو واجهت مشكلة أثناء استخدام الموقع؟
+                        يسعدني استقبال رسالتك والمساعدة في تطوير المشروع.
                     </p>
-
-                    <div class="copyCon" id="copyIbanBtn">
-
-                        <p>
-                            <strong>الآيبان (IBAN):</strong>
-                            <span id="ibanValue">
-                                SA0000000000000000000000
-                            </span>
-                        </p>
-
-                        <div class="copy">
-                            <i class="fa-regular fa-copy copyd"></i>
-                            <p>نسخ الآيبان</p>
+                    <div class="info-items">
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>البريد الإلكتروني:</strong>
+                                <span>omairshop6@gmail.com</span>
+                            </div>
                         </div>
 
-                    </div>
+                        <div class="info-item">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <strong>الدعم الفني:</strong>
+                                <a target="_blank" href="https://wa.me/201204533680" style="direction: ltr;">0120 4533
+                                    680</a>
+                            </div>
+                        </div>
 
+                        <div class="info-item">
+                            <i class="fa-solid fa-user-gear"></i>
+                            <div>
+                                <strong>المطور:</strong>
+                                <span>عمير محمد</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">الاسم</label>
+                            <input onblur="validation(this)"  type="text" id="contactName" name="name" placeholder="أدخل اسمك هنا" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">البريد الإلكتروني</label>
+                            <input onblur="validation(this)" type="email" id="contactEmail" name="email" placeholder="example@mail.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">الرسالة أو الاستفسار</label>
+                            <textarea onblur="validation(this)" id="contactMessage" name="message" rows="4" placeholder="اكتب رسالتك بالتفصيل..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i> إرسال الرسالة
+                        </button>
+                    </form>
                 </div>
 
             </div>
-
         </div>
     </section>
 
@@ -146,8 +153,10 @@
         </div>
     </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/support.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
